@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Smart Campus Complaint Management System" />
+  <title>CampusCare | Smart Campus Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="CampusCare home"><span class="brand-logo">CC</span><span>Campus<span class="brand-accent">Care</span><small>SMART CAMPUS SERVICES</small></span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="main-nav">
+      <a href="#home" class="nav-link active" data-page="home">Home</a>
+      <a href="#submit" class="nav-link" data-page="submit">Submit Complaint</a>
+      <a href="#complaints" class="nav-link" data-page="complaints">My Complaints</a>
+      <a href="#dashboard" class="nav-link" data-page="dashboard">Dashboard</a>
+    </nav>
+    <a href="#submit" class="header-cta">Report an issue <span>↗</span></a>
+  </header>
+
+  <main>
+    <!-- HOME PAGE -->
+    <section id="home" class="page-section">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="hero-kicker"><span class="live-dot"></span> YOUR CAMPUS, YOUR VOICE</div>
+          <h1>A better campus<br />starts with <span>you.</span></h1>
+          <p>Report campus issues, follow every update, and help create a safer, cleaner, smarter place to learn.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#submit">＋ Submit a complaint</a><a class="btn btn-quiet" href="#complaints">Track a complaint <span>→</span></a></div>
+          <div class="hero-trust"><div class="avatar-stack"><span>A</span><span>S</span><span>R</span><span>+</span></div><span><b>Every report matters.</b><br />Together, we improve campus life.</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Illustration of a campus building">
+          <div class="visual-circle circle-one"></div><div class="visual-circle circle-two"></div>
+          <div class="building">
+            <div class="building-roof"><span>✦</span></div><div class="building-sign">CAMPUS SERVICES</div>
+            <div class="building-windows"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="building-door"></div>
+            <div class="building-step"></div>
+          </div>
+          <div class="float-card float-status"><span class="float-icon green-icon">✓</span><span><b>Issue received</b><small>Complaint submitted</small></span></div>
+          <div class="float-card float-track"><span class="float-icon purple-icon">↗</span><span><b>Track progress</b><small>Stay in the loop</small></span></div>
+          <div class="decor-star star-one">✦</div><div class="decor-star star-two">✧</div>
+        </div>
+      </section>
+      <section class="home-stats">
+        <div><span class="mini-stat-icon">▤</span><span><b id="home-total">0</b><small>Complaints reported</small></span></div>
+        <div><span class="mini-stat-icon amber-bg">◷</span><span><b id="home-pending">0</b><small>Awaiting action</small></span></div>
+        <div><span class="mini-stat-icon green-bg">✓</span><span><b id="home-resolved">0</b><small>Issues resolved</small></span></div>
+      </section>
+      <section class="how-section">
+        <div class="section-intro"><span class="eyebrow">SIMPLE. TRANSPARENT. EFFECTIVE.</span><h2>Making campus better,<br /><span>one report at a time.</span></h2><p>Our simple process helps campus teams understand problems and take action.</p></div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-number">01</span><div class="step-icon lilac">✎</div><h3>Report an issue</h3><p>Tell us what happened, where it happened, and how urgent it is.</p><a href="#submit">Submit a report →</a></article>
+          <article class="step-card"><span class="step-number">02</span><div class="step-icon peach">◷</div><h3>Follow progress</h3><p>Use your complaint ID and tracker to check the latest status.</p><a href="#complaints">Track your issue →</a></article>
+          <article class="step-card"><span class="step-number">03</span><div class="step-icon mint">✓</div><h3>See the change</h3><p>Follow issues from pending to in progress and finally resolved.</p><a href="#dashboard">View dashboard →</a></article>
+        </div>
+      </section>
+      <section class="home-cta"><div><span class="eyebrow">YOUR CAMPUS NEEDS YOU</span><h2>Noticed something that needs fixing?</h2><p>It only takes a minute to help make a difference.</p></div><a class="btn btn-white" href="#submit">Report an issue <span>→</span></a></section>
+    </section>
+
+    <!-- SUBMIT COMPLAINT PAGE -->
+    <section id="submit" class="page-section inner-page" hidden>
+      <div class="page-banner"><div><span class="eyebrow">WE'RE LISTENING</span><h1>Submit a complaint</h1><p>Give us the details and we’ll help get the issue to the right team.</p></div><div class="banner-symbol">✎</div></div>
+      <div class="submit-layout">
+        <section class="surface form-surface">
+          <div class="surface-heading"><div><h2>Complaint details</h2><p>Fields marked with <span class="required">*</span> are required.</p></div><span class="secure-note">▣ Private demo</span></div>
+          <form id="complaint-form">
+            <div class="form-grid">
+              <label>Full name <span class="required">*</span><input name="name" required maxlength="70" placeholder="Enter your full name" /></label>
+              <label>Student ID <span class="required">*</span><input name="studentId" required maxlength="30" placeholder="e.g. 23CSE104" /></label>
+              <label>Complaint category <span class="required">*</span><select name="category" required><option value="">Choose a category</option><option>Infrastructure</option><option>Electricity</option><option>Water supply</option><option>Cleanliness</option><option>Wi-Fi / Internet</option><option>Hostel</option><option>Library</option><option>Transport</option><option>Safety</option><option>Other</option></select></label>
+              <label>Location <span class="required">*</span><input name="location" required maxlength="100" placeholder="e.g. Block B, Room 204" /></label>
+              <label class="full-field">Complaint title <span class="required">*</span><input name="title" required maxlength="100" placeholder="Briefly describe the problem" /></label>
+              <label class="full-field">Description <span class="required">*</span><textarea name="description" required maxlength="1200" rows="5" placeholder="What happened? When did you notice it? Add details that may help resolve the issue."></textarea></label>
+              <label>Priority<select name="priority"><option>Normal</option><option>Low</option><option>High</option><option>Urgent</option></select></label>
+              <label>Contact email<input name="email" type="email" maxlength="120" placeholder="you@example.com (optional)" /></label>
+            </div>
+            <div class="form-footer"><p>🔒 This demo stores data in your browser only.</p><button class="btn btn-primary" type="submit">Submit complaint <span>→</span></button></div>
+            <p id="form-message" role="status" aria-live="polite" class="form-message"></p>
+          </form>
+        </section>
+        <aside class="surface advice-surface"><div class="advice-illustration"><span>✦</span><i>✧</i></div><span class="eyebrow">A FEW HELPFUL TIPS</span><h2>Help us solve it faster.</h2><div class="advice-item"><span>1</span><div><b>Pinpoint the location</b><p>Include the building, floor, room, or nearby landmark.</p></div></div><div class="advice-item"><span>2</span><div><b>Describe the issue clearly</b><p>Share what you observed and when it started.</p></div></div><div class="advice-item"><span>3</span><div><b>Choose a fair priority</b><p>Use urgent only for immediate or safety-critical concerns.</p></div></div><div class="emergency-note"><b>Need immediate help?</b><p>For emergencies, contact campus security or administration directly.</p></div></aside>
+      </div>
+    </section>
+
+    <!-- MY COMPLAINTS PAGE -->
+    <section id="complaints" class="page-section inner-page" hidden>
+      <div class="page-banner"><div><span class="eyebrow">YOUR REPORTS, ALL IN ONE PLACE</span><h1>My complaints</h1><p>Search your reports and follow their progress from submission to resolution.</p></div><div class="banner-symbol">▤</div></div>
+      <section class="surface tracker-surface">
+        <div class="tracker-top"><div><h2>Complaint tracker</h2><p>Records saved in this browser.</p></div><button id="export-btn" class="btn btn-outline">↓ Export CSV</button></div>
+        <div class="filter-bar"><div class="search-input"><span>⌕</span><input id="search-input" type="search" placeholder="Search ID, title, location, student..." aria-label="Search complaints" /></div><select id="status-filter" aria-label="Filter by status"><option value="All">All statuses</option><option>Pending</option><option>In Progress</option><option>Resolved</option></select><select id="category-filter" aria-label="Filter by category"><option value="All">All categories</option><option>Infrastructure</option><option>Electricity</option><option>Water supply</option><option>Cleanliness</option><option>Wi-Fi / Internet</option><option>Hostel</option><option>Library</option><option>Transport</option><option>Safety</option><option>Other</option></select></div>
+        <div id="complaint-list" class="complaint-list"></div>
+        <div id="empty-state" class="empty-state"><span>▤</span><h3>No complaints found</h3><p>Submit a complaint or adjust your search and filters.</p><a class="btn btn-primary" href="#submit">＋ Submit a complaint</a></div>
+        <p class="demo-disclaimer">Demo mode: complaint status changes are stored locally. There is no live server or multi-user database connected.</p>
+      </section>
+    </section>
+
+    <!-- DASHBOARD PAGE -->
+    <section id="dashboard" class="page-section inner-page" hidden>
+      <div class="page-banner"><div><span class="eyebrow">CAMPUS SERVICE OVERVIEW</span><h1>Dashboard</h1><p>A quick look at reported issues and their current status.</p></div><div class="banner-symbol">◫</div></div>
+      <section class="dashboard-metrics">
+        <article class="metric-card"><div class="metric-top"><span>Total complaints</span><span class="metric-icon lilac">▤</span></div><strong id="dash-total">0</strong><small>All reports submitted</small><div class="metric-track"><i id="total-bar"></i></div></article>
+        <article class="metric-card"><div class="metric-top"><span>Pending</span><span class="metric-icon amber-bg">◷</span></div><strong id="dash-pending">0</strong><small>Waiting for attention</small><div class="metric-track"><i id="pending-bar"></i></div></article>
+        <article class="metric-card"><div class="metric-top"><span>In progress</span><span class="metric-icon blue-bg">⚙</span></div><strong id="dash-progress">0</strong><small>Currently being handled</small><div class="metric-track"><i id="progress-bar"></i></div></article>
+        <article class="metric-card"><div class="metric-top"><span>Resolved</span><span class="metric-icon green-bg">✓</span></div><strong id="dash-resolved">0</strong><small>Marked as completed</small><div class="metric-track"><i id="resolved-bar"></i></div></article>
+      </section>
+      <div class="dashboard-grid">
+        <section class="surface chart-surface"><div class="surface-heading"><div><h2>Complaint status</h2><p>Breakdown of all reports currently saved</p></div><span class="chart-label">LIVE LOCAL DATA</span></div><div class="donut-wrap"><div class="donut" id="status-donut"><div><strong id="donut-total">0</strong><small>Total reports</small></div></div><div class="chart-legend"><div><span class="legend-dot pending-dot"></span><span>Pending</span><b id="legend-pending">0</b></div><div><span class="legend-dot progress-dot"></span><span>In progress</span><b id="legend-progress">0</b></div><div><span class="legend-dot resolved-dot"></span><span>Resolved</span><b id="legend-resolved">0</b></div></div></div></section>
+        <section class="surface category-surface"><div class="surface-heading"><div><h2>By category</h2><p>Which issues are being reported?</p></div></div><div id="category-breakdown" class="category-breakdown"></div><p id="category-empty" class="muted">Category insights will appear after complaints are submitted.</p></section>
+      </div>
+      <section class="surface recent-surface"><div class="tracker-top"><div><h2>Recent complaints</h2><p>The latest reports submitted in this browser.</p></div><a href="#complaints" class="text-link">View all complaints →</a></div><div id="recent-list" class="recent-list"></div><div id="recent-empty" class="empty-compact">No complaints submitted yet. <a href="#submit">Create your first report →</a></div></section>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-logo">CC</span><span>Campus<span class="brand-accent">Care</span></span></a><p>Made for a better campus · Student project demo</p><div><a href="#home">Home</a><a href="#submit">Submit complaint</a><a href="#dashboard">Dashboard</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
